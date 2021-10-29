@@ -133,14 +133,14 @@ def minimax(board):
     current_player = player(board)
 
     if current_player == X:
-        v = -10
+        v = -math.inf
         for action in actions(board):
             k = calc_min_value(result(board, action))
             if k > v:
                 v = k
                 best_move = action
     else:
-        v = 10
+        v = math.inf
         for action in actions(board):
             k = calc_max_value(result(board, action))
             if k < v:
